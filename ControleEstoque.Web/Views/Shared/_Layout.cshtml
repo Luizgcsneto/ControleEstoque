@@ -45,7 +45,10 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Operações", "Sobre", "Home")</li>
+                            <li>@Html.ActionLink("Entrada de Produtos", "EntradaEstoque", "Operacao")</li>
+                            <li>@Html.ActionLink("Saída de Produtos", "SaidaEstoque", "Operacao")</li>
+                            <li>@Html.ActionLink("Lançamento de perdas do estoque", "LancamentoPerdaEstoque", "Operacao")</li>
+                            <li>@Html.ActionLink("Inventário do estoque", "Inventario", "Operacao")</li>
                         </ul>
                     </li>
                     <li>
@@ -54,7 +57,8 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Relatórios", "Sobre", "Home")</li>
+                            <li>@Html.ActionLink("Posição de estoque", "PosicaoEstoque", "Relatorio")</li>
+                            <li>@Html.ActionLink("Ressuprimento", "Ressuprimento", "Relatorio")</li>
                         </ul>
                     </li>
                     <li>
@@ -63,7 +67,9 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Gráficos", "Sobre", "Home")</li>
+                            <li>@Html.ActionLink("Perdas do mês", "PerdaMes", "Grafico")</li>
+                            <li>@Html.ActionLink("Entrada vc saída do mês", "EntradaSaidaMes", "Relatorio")</li>
+           
                         </ul>
                     </li>
 

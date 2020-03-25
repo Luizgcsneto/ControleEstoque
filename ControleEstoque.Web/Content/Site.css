@@ -23,4 +23,13 @@ textarea {
     max-width: 280px;
 }
 
+.container-login{
+    width:400px;
+    margin-bottom: 0 auto;
+}
+
+.titulo{
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
 

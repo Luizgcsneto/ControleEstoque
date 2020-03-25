@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleEstoque.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,5 +15,18 @@ namespace ControleEstoque.Web.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Login(LoginViewModel login, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(login);
+            }
+
+            return View(login);
+
+        }
+
     }
 }

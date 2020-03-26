@@ -3,7 +3,30 @@
     ViewBag.Title = "Cadastro de Grupo de Produtos";
 }
 <style>
+    #grip_cadastro > thead > tr th:nth-child(2) {
+        width: 110px;
+    }
 
+    #grip_cadastro > thead > tr th:nth-child(3) {
+        width: 200px;
+    }
+
+    #cabecalho_grid {
+        margin-bottom: 20px;
+    }
+
+    #cadastro {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #cadastro_cabecalho {
+       border-bottom: 1px #dddddd solid;
+    }
+
+    #cadastro_conteudo {
+       margin-top: 20px;
+    }
 </style>
 <div id="cadastro">
     <section id="cadastro_cabecalho">
@@ -12,7 +35,6 @@
 
 
     <section id="cadastro_conteudo">
-
         <div id="cabecalho_grid" class="row">
 
         </div>
@@ -44,11 +66,22 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
-
-
-
     </section>
 
 </div>
+
+@section Scripts {
+    <script>
+        $(document).on('click', '#btn_incluir', function(){
+            alert(1)
+        })
+            .on('click', '.btn_alterar', function(){
+                alert(2)
+            })
+            .on('click', '.btn_excluir', function(){
+                alert(3)
+            })
+
+    </script>
+} 

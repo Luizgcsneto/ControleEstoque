@@ -17,60 +17,77 @@ namespace ControleEstoque.Web.Controllers
             new GrupoProdutoModel() {Id=4, Nome="Lápis", Ativo=false }
         };
 
-    [Authorize]
-    public ActionResult GrupoProduto()
-    {
-        return View(_listaGrupoProduto);
+        [HttpPost]
+        [Authorize]
+        public ActionResult RecuperarGrupoProduto(int id)
+        {
+            return Json(_listaGrupoProduto.Find(x => x.Id == id));
+        }
+
+        [Authorize]
+        public ActionResult GrupoProduto()
+        {
+            return View(_listaGrupoProduto);
+        }
+
+        [Authorize]
+        public ActionResult MarcaProduto()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult LocalProduto()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult UnidadeMedida()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Produto()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Pais()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Estado()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Cidade()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Fornecedor()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult PerfilUsuario()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Usuario()
+        {
+            return View();
+        }
     }
-    [Authorize]
-    public ActionResult MarcaProduto()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult LocalProduto()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult UnidadeMedida()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult Produto()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult Pais()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult Estado()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult Cidade()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult Fornecedor()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult PerfilUsuario()
-    {
-        return View();
-    }
-    [Authorize]
-    public ActionResult Usuario()
-    {
-        return View();
-    }
-}
 }

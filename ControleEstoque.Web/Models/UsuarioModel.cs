@@ -14,7 +14,7 @@ namespace ControleEstoque.Web.Models
             var ret = false;
             using (var conexao = new SqlConnection())
             {
-                conexao.ConnectionString = "Data Source=localhost; Initial Catalog=controle-estoque;User Id=admin,Password=123";
+                conexao.ConnectionString = @"Data Source=DESKTOP-OFQU7U6\SQLEXPRESS;Initial Catalog=controle-estoque;User Id=admindbo;Password=123";
                 conexao.Open();
                 using (var comando = new SqlCommand())
                 {

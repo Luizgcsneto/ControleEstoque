@@ -24,6 +24,29 @@ namespace ControleEstoque.Web.Controllers
             return Json(_listaGrupoProduto.Find(x => x.Id == id));
         }
 
+        [HttpPost]
+        [Authorize]
+        public ActionResult ExcluirGrupoProduto(int id)
+        {
+            var ret = false;
+
+            var registroBD = _listaGrupoProduto.Find(x => x.Id == id);
+
+            if (registroBD != null)
+            {
+                _listaGrupoProduto.Remove(registroBD);
+                ret = true;
+            }
+            return Json(ret);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult SalvarGrupoProduto(int id)
+        {
+            return Json(_listaGrupoProduto.Find(x => x.Id == id));
+        }
+
         [Authorize]
         public ActionResult GrupoProduto()
         {

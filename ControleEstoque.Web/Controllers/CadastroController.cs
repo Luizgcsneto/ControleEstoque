@@ -31,20 +31,54 @@ namespace ControleEstoque.Web.Controllers
             var ret = false;
 
             var registroBD = _listaGrupoProduto.Find(x => x.Id == id);
-
             if (registroBD != null)
             {
                 _listaGrupoProduto.Remove(registroBD);
                 ret = true;
             }
+
             return Json(ret);
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult SalvarGrupoProduto(int id)
+        public ActionResult SalvarGrupoProduto(GrupoProdutoModel model)
         {
-            return Json(_listaGrupoProduto.Find(x => x.Id == id));
+            var resultado = "OK";
+            var mensagens = new List<String>();
+            var idSalvo = string.Empty;
+
+            if (!ModelState.IsValid)
+            {
+                resultado = "AVISO";
+                mensagens = ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList();
+            }
+            else
+            {
+                try
+                {
+                    var registroBD = _listaGrupoProduto.Find(x => x.Id == model.Id);
+
+                    if (registroBD == null)
+                    {
+                        registroBD = model;
+                        registroBD.Id = _listaGrupoProduto.Max(x => x.Id) + 1;
+                        _listaGrupoProduto.Add(registroBD);
+                    }
+                    else
+                    {
+                        registroBD.Nome = model.Nome;
+                        registroBD.Ativo = model.Ativo;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    resultado = "ERRO";
+                }
+               
+
+            }
+            return Json(new { Resultado = resultado, Mensagens = mensagens, IdSaldo = idSalvo });
         }
 
         [Authorize]
